@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin: 12px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
