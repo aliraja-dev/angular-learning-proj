@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { HttpFirebaseComponent } from "./http-firebase/http-firebase.component";
 import { ReactiveFormsComponent } from "./reactive-forms/reactive-forms.component";
 
 import { TemplateFormComponent } from "./template-form/template-form.component";
@@ -11,7 +12,8 @@ const routes: Routes = [
   {
     path: 'template', component: TemplateFormComponent
   },
-  {path: 'reactive', component: ReactiveFormsComponent}
+  {path: 'reactive', component: ReactiveFormsComponent},
+  {path: 'firebase', component: HttpFirebaseComponent}
 ]
 
 @NgModule({

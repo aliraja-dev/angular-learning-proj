@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Observable } from 'rxjs';
+import { FirebaseServiceService } from '../firebase-service.service';
 
 
 @Component({
@@ -12,8 +13,8 @@ import { Observable } from 'rxjs';
 export class ReactiveFormsComponent implements OnInit {
   genders: string[]=['male','female', 'binary'];
   forbiddenUserNames = ['admin', 'CocaCola', 'USA'];
-  emailTaken = ['abc@abc'];
-  constructor() { }
+
+  constructor(private firebaseSvc:FirebaseServiceService) { }
 
   signUpForm: FormGroup;
 
@@ -41,6 +42,7 @@ export class ReactiveFormsComponent implements OnInit {
 
   onSubmit(){
     console.log(this.signUpForm);
+    this.firebaseSvc.storeData(this.signUpForm.value).subscribe(v=> console.log(v), e => console.log(e));
   }
 
   onAddHobby(){

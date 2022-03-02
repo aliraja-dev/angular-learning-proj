@@ -1,0 +1,7 @@
+<p>http-firebase works!</p>
+
+<p>{{ valueFetched | async }}</p>
+
+<p *ngFor="let property of fetchedData | keyvalue">
+  {{ property.key }}: {{ property.value }}
+</p>
