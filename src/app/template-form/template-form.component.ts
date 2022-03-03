@@ -1,8 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-
-
-
-
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -15,31 +11,26 @@ export class TemplateFormComponent {
   defaultSecretQs : string = "teacher";
   qsAnswer:string = "";
   genders: string[]= ['male', 'female', 'binary'];
-  @ViewChild('f') form: NgForm;
+  @ViewChild('f', {static:false}) form!: NgForm;
   formSubmitted: boolean=false;
-  userData={
-    gender:"",
-    userData:{
+    user ={
+      gender:"",
       username:"",
-      email:""
-    },
-    secretQs:{
+      email:"",
       secret:'',
       answer:''
     }
-
-  }
   // onSubmit(form:NgForm){
   //   console.log( form);
   // }
   onSubmit(){
-    console.log(this.form);
+    console.log(this.form.value);
     this.formSubmitted=true;
-    this.userData.gender= this.form.value.gender;
-    this.userData.userData.username= this.form.value.userData.username;
-    this.userData.userData.email= this.form.value.userData.email;
-    this.userData.secretQs.secret= this.form.value.secretQs.secret;
-    this.userData.secretQs.answer= this.form.value.secretQs.answer
+    this.user.gender= this.form.value.gender;
+    this.user.username= this.form.value.userData.username;
+    this.user.email= this.form.value.userData.email;
+    this.user.secret= this.form.value.secretQs.secret;
+    this.user.answer= this.form.value.secretQs.answer
     this.form.reset();
   }
 

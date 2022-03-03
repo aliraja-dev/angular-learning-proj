@@ -16,7 +16,7 @@ export class ReactiveFormsComponent implements OnInit {
 
   constructor(private firebaseSvc:FirebaseServiceService) { }
 
-  signUpForm: FormGroup;
+  signUpForm!: FormGroup;
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
