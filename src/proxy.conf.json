@@ -1,7 +1,0 @@
-{
-  "/api/*": {
-    "target": "https://angular-learning-project-ac62c-default-rtdb.firebaseio.com/",
-    "secure": false,
-    "logLevel": "debug"
-  }
-}
