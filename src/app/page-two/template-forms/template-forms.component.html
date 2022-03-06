@@ -92,13 +92,11 @@
   </div>
   <hr />
   <h5>Once submitted your form data will show below:</h5>
-  <div class="row" *ngIf="formSubmitted">
-    <div class="col-xs-12">
-      <p>Username : {{ user.username }}</p>
-      <p>Email: {{ user.email }}</p>
-      <p>Secret Question: {{ user.secret }}</p>
-      <p>Answer: {{ user.answer }}</p>
-      <p>Gender: {{ user.gender }}</p>
-    </div>
-  </div>
+  <ul class="list-group" *ngIf="formSubmitted">
+    <li class="list-group-item">Username : {{ user.username }}</li>
+    <li class="list-group-item">Email: {{ user.email }}</li>
+    <li class="list-group-item">Secret Question: {{ user.secret }}</li>
+    <li class="list-group-item">Answer: {{ user.answer }}</li>
+    <li class="list-group-item">Gender: {{ user.gender }}</li>
+  </ul>
 </div>

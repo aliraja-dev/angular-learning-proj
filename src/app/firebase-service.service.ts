@@ -44,7 +44,8 @@ FIREBASE_URL: string= 'https://angular-learning-project-ac62c-default-rtdb.fireb
       console.log(res);
       const array =[];
       for (let key in res){
-        array.push(res[key]);
+        if(res.hasOwnProperty(key)){
+        array.push({...res[key], id: key});}
       }
       return array;
      })))

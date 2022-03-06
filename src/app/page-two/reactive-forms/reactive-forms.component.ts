@@ -78,6 +78,6 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   onFetchData(){
-    this.firebaseSvc.getData().subscribe(data=> console.log(data));
+    this.firebaseSvc.getData().subscribe(data=> {this.dbRecords=data});
   }
 }

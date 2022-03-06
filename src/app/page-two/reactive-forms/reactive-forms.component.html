@@ -92,12 +92,30 @@
         <button (click)="onFetchData()" class="btn-default" type="button">
           Fetch from firebase
         </button>
-        <ol>
-          <li *ngFor="let element of dbRecords">
-            <p>{{ dbRecords[element] }}</p>
-          </li>
-        </ol>
+        <ol></ol>
       </div>
     </div>
+    <table class="table" *ngIf="this.dbRecords.length > 0">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Username</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Hobbies</th>
+          <th scope="col">Email</th>
+          <th scope="col">Firebase id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of dbRecords; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ post.userData.username }}</td>
+          <td>{{ post.gender }}</td>
+          <td>{{ post.hobbies }}</td>
+          <td>{{ post.userData.email }}</td>
+          <td>{{ post.id }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
