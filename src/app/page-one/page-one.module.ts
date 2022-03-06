@@ -8,6 +8,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { ServicesComponent } from './services/services.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ServicesComponent } from './services/services.component';
   ],
   imports: [
     CommonModule,
-    PageOneRoutingModule
+    PageOneRoutingModule,
+    FormsModule
   ]
 })
 export class PageOneModule { }

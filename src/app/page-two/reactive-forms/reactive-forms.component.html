@@ -60,7 +60,9 @@
 
         <div formArrayName="hobbies">
           <h3>Your Hobbies</h3>
-          <button (click)="onAddHobby()">Add Hobbies</button>
+          <button (click)="onAddHobby()" class="btn btn-primary mb-2">
+            Add Hobbies
+          </button>
           <div
             class=""
             *ngFor="let hobbyControl of getControls(); let i = index"
@@ -85,6 +87,17 @@
           Submit
         </button>
       </form>
+      <div class="result">
+        <h3>Records from Firebase RT DB</h3>
+        <button (click)="onFetchData()" class="btn-default" type="button">
+          Fetch from firebase
+        </button>
+        <ol>
+          <li *ngFor="let element of dbRecords">
+            <p>{{ dbRecords[element] }}</p>
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
 </div>

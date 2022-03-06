@@ -13,6 +13,7 @@ import { FirebaseServiceService } from '../../firebase-service.service';
 export class ReactiveFormsComponent implements OnInit {
   genders: string[]=['male','female', 'binary'];
   forbiddenUserNames = ['admin', 'CocaCola', 'USA'];
+  dbRecords:any=[];
 
   constructor(private firebaseSvc:FirebaseServiceService) { }
 
@@ -38,6 +39,8 @@ export class ReactiveFormsComponent implements OnInit {
 
     this.signUpForm.statusChanges.subscribe((v)=>{console.log(v)});
     this.signUpForm.valueChanges.subscribe((v)=>{console.log(v)})
+
+
   }
 
   onSubmit(){
@@ -74,4 +77,7 @@ export class ReactiveFormsComponent implements OnInit {
     return promise;
   }
 
+  onFetchData(){
+    this.firebaseSvc.getData().subscribe(data=> console.log(data));
+  }
 }

@@ -9,7 +9,7 @@
             <input
               type="text"
               id="username"
-              class="form-control"
+              class="form-control mb-2"
               name="username"
               required
               ngModel
@@ -39,7 +39,7 @@
             >
           </div>
         </div>
-        <div class="form-group" ngModelGroup="secretQs">
+        <div class="form-group mb-2" ngModelGroup="secretQs">
           <label for="secret">Secret Questions</label>
           <select
             id="secret"
@@ -55,7 +55,7 @@
             <input
               type="text"
               id="amswer"
-              class="form-control"
+              class="form-control mb-2"
               name="answer"
               [(ngModel)]="qsAnswer"
               required
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <div class="container">
+        <div class="container mb-2">
           <h6>Please select a gender</h6>
           <div class="radio" *ngFor="let gender of genders">
             <input
@@ -91,9 +91,9 @@
     </div>
   </div>
   <hr />
+  <h5>Once submitted your form data will show below:</h5>
   <div class="row" *ngIf="formSubmitted">
     <div class="col-xs-12">
-      <h3>Your Submitted data</h3>
       <p>Username : {{ user.username }}</p>
       <p>Email: {{ user.email }}</p>
       <p>Secret Question: {{ user.secret }}</p>

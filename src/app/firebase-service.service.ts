@@ -39,8 +39,15 @@ FIREBASE_URL: string= 'https://angular-learning-project-ac62c-default-rtdb.fireb
    }
 
    getData(){
-     return this.http.get(this.FIREBASE_URL)
-     .pipe()
+     return this.http.get<any>(this.FIREBASE_URL)
+     .pipe(map((res=> {
+      console.log(res);
+      const array =[];
+      for (let key in res){
+        array.push(res[key]);
+      }
+      return array;
+     })))
      ;
    }
 }
