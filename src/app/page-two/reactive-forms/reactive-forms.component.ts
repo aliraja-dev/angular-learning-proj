@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Observable } from 'rxjs';
-import { FirebaseServiceService } from '../firebase-service.service';
+import { FirebaseServiceService } from '../../firebase-service.service';
 
 
 @Component({

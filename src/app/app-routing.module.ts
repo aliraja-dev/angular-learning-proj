@@ -1,21 +1,29 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { HttpFirebaseComponent } from "./http-firebase/http-firebase.component";
-import { ReactiveFormsComponent } from "./reactive-forms/reactive-forms.component";
 
-import { TemplateFormComponent } from "./template-form/template-form.component";
 
 const routes: Routes = [
-
   {
-    path:'', redirectTo: '/reactive', pathMatch:'full'
+    path: "", redirectTo: "/page1", pathMatch:"full"
   },
-  {path: '/home', loadChildren:()=> import('./home/home.module').then(mod=> mod.HomeModule)},
-  {
-    path: 'template', component: TemplateFormComponent
-  },
-  {path: 'reactive', component: ReactiveFormsComponent},
-  {path: 'firebase', component: HttpFirebaseComponent}
+{
+  path:"page1", loadChildren :()=> import("./page-one/page-one.module").then(m=>m.PageOneModule)
+},
+{
+  path:"page2", loadChildren :()=> import("./page-two/page-two.module").then(m=>m.PageTwoModule)
+},
+{
+  path:"page3", loadChildren :()=> import("./page-three/page-three.module").then(m=>m.PageThreeModule)
+},
+{
+  path:"page4", loadChildren :()=> import("./page-four/page-four.module").then(m=>m.PageFourModule)
+},
+{
+  path:"page5", loadChildren :()=> import("./page-five/page-five.module").then(m=>m.PageFiveModule)
+},
+{
+  path:"page6", loadChildren :()=> import("./page-six/page-six.module").then(m=>m.PageSixModule)
+},
 ]
 
 @NgModule({

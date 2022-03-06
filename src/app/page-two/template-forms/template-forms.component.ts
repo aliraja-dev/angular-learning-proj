@@ -2,11 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-template-form',
-  templateUrl: './template-form.component.html',
-  styleUrls: ['./template-form.component.css']
+  selector: 'app-template-forms',
+  templateUrl: './template-forms.component.html',
+  styleUrls: ['./template-forms.component.css']
 })
-export class TemplateFormComponent {
+export class TemplateFormsComponent {
   title = 'Angular-learning-project';
   defaultSecretQs : string = "teacher";
   qsAnswer:string = "";
