@@ -6,54 +6,79 @@
         style="width: 280px"
       >
         <a
-          href="/"
           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
         >
           <svg class="bi me-2" width="40" height="32">
             <use xlink:href="#bootstrap" />
           </svg>
-          <span class="fs-4">Sidebar</span>
+          <span class="fs-4">Basics</span>
         </a>
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="/page3"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#home" />
               </svg>
-              Home
+              Intro to RxJS
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a
+              class="nav-link link-dark"
+              routerLink="rxjs"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#speedometer2" />
               </svg>
-              Dashboard
+              RxJS
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a
+              class="nav-link link-dark"
+              routerLink="observables"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#table" />
               </svg>
-              Orders
+              Observables
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a
+              class="nav-link link-dark"
+              routerLink="subjects"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#grid" />
               </svg>
-              Products
+              Subjects
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a
+              class="nav-link link-dark"
+              routerLink="pipes"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#people-circle" />
               </svg>
-              Customers
+              Pipes
             </a>
           </li>
         </ul>

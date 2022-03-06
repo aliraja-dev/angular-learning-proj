@@ -19,6 +19,7 @@
             <a
               routerLink="/page2"
               routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
               data-binding
               class="nav-link"
               aria-current="page"
@@ -36,6 +37,7 @@
               class="nav-link"
               aria-current="page"
               routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
             >
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#home" />
@@ -48,6 +50,7 @@
               routerLink="reactive"
               class="nav-link link-dark"
               routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
             >
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#speedometer2" />
