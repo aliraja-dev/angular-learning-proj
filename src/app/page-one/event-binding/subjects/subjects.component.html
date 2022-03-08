@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <label for="">Enter anything that will be emitted as a subject</label>
+      <input
+        type="text"
+        class="form-control"
+        #inputField
+        (keyup)="emitData(inputField.value)"
+        placeholder="Enter anything here "
+      />
+    </div>
+  </div>
+  <div class="col">
+    <p>
+      The input field has a keyup event that triggers an event handler, and
+      passes the value of the field using template reference and the handler
+      then uses the NEXT method on the subject which was initialized in the
+      service. so every time user has a keyup the value is sent to handler which
+      emits a value and the parent component has a subscription setup in it
+      ngOnInit method that listens to any future data sent.
+    </p>
+    <p>
+      And inside the subscription callback we set the data received to the local
+      prop of it.
+      <br />
+    </p>
+  </div>
+</div>

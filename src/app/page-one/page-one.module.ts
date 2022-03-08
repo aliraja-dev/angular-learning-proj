@@ -14,6 +14,8 @@ import { AccountComponent } from './data-binding/account/account.component';
 import { NewAccountComponent } from './data-binding/new-account/new-account.component';
 import { AccountsService } from './data-binding/accounts.service';
 import { LoggingService } from './data-binding/logging.service';
+import { SubjectsComponent } from './event-binding/subjects/subjects.component';
+import { SubjectService } from './event-binding/subject.service';
 
 
 @NgModule({
@@ -26,13 +28,14 @@ import { LoggingService } from './data-binding/logging.service';
     ServicesComponent,
     Child1Component,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    SubjectsComponent
   ],
   imports: [
     CommonModule,
     PageOneRoutingModule,
     FormsModule
   ],
-  providers:[AccountsService, LoggingService]
+  providers:[AccountsService, LoggingService, SubjectService]
 })
 export class PageOneModule { }
