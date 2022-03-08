@@ -16,6 +16,7 @@ import { AccountsService } from './data-binding/accounts.service';
 import { LoggingService } from './data-binding/logging.service';
 import { SubjectsComponent } from './event-binding/subjects/subjects.component';
 import { SubjectService } from './event-binding/subject.service';
+import { FilterPipe } from './directives/filter.pipe';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { SubjectService } from './event-binding/subject.service';
     Child1Component,
     AccountComponent,
     NewAccountComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,60 @@
-<p>directives works!</p>
+<h3>Pipes</h3>
+<h5>Built In Pipes</h5>
+<h6>Date Pipe</h6>
+
+<p>
+  Todays's Date: <span class="lead fw-bold">{{ date }}</span>
+</p>
+<p>
+  Today's data after using date pipe:
+  <span class="lead fw-bold">{{ date | date }}</span>
+</p>
+
+<h6>Async Pipe</h6>
+
+<p>
+  Status is a Promise and without async Pipe
+  <span class="lead fw-bold">{{ asyncResponse }}</span>
+</p>
+<p>
+  Status is a Promise and with async Pipe it will come once the promise
+  resolves, i.e. in this case a setTimeOut of 3000 ms.
+  <br />
+  <span class="lead fw-bold">{{ asyncResponse | async | uppercase }}</span>
+</p>
+
+<h6>Custom Pipe</h6>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="filteredStatus"
+        placeholder="Enter offline, stable or critical to filter the list below"
+      />
+      <br />
+      <button class="btn btn-primary" (click)="onAddServer()">
+        Add Server
+      </button>
+      <br /><br />
+
+      <hr />
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers | filter: filteredStatus:'status'"
+          [ngClass]="getStatusClasses(server)"
+        >
+          <span class="badge fw-bold">
+            {{ server.status | uppercase }}
+          </span>
+          <strong>{{ server.name }}</strong> |
+          {{ server.instanceType | uppercase }} |
+          {{ server.started | date: "shortDate" | uppercase }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
