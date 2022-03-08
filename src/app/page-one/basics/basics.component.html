@@ -107,6 +107,13 @@
 </svg>
 <div class="container px-4 py-5" id="featured-3">
   <h2 class="pb-2 border-bottom">Data & Event Binding</h2>
+  <p>
+    Property binding in Angular helps you set values for properties of HTML
+    elements or directives. Use property binding to do things such as toggle
+    button functionality, set paths programmatically, and share values between
+    components. <br />Property binding moves a value in one direction, from a
+    component's property into a target element property.
+  </p>
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     <div class="feature col">
       <div class="feature-icon bg-primary bg-gradient">
@@ -166,5 +173,43 @@
     </div>
   </div>
 </div>
+<p>
+  To bind to an event you use the Angular event binding syntax. This syntax
+  consists of a target event name within parentheses to the left of an equal
+  sign, and a quoted template statement to the right. In the following example,
+  the target event name is click and the template statement is onSave().
+</p>
+<code> button (click)="onSave()"> Save button </code>
 
 <div class="b-example-divider"></div>
+
+<div class="container">
+  <h3>Parent Component</h3>
+  <input
+    type="text"
+    name=""
+    id=""
+    #parentInputField
+    class="form-control mb-2"
+    (keyup)="(0)"
+  />
+  <p>Value received from child 1: {{ stringFromChild1 }}</p>
+  <button
+    (click)="runChange($event)"
+    type="button"
+    class="btn btn-primary mb-3"
+  >
+    Send to Child
+  </button>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <h3>toChild Component</h3>
+      <app-child1
+        (fromChild1)="fromChild1($event)"
+        [toChild]="parentInputField.value"
+      ></app-child1>
+    </div>
+  </div>
+</div>

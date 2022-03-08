@@ -1,0 +1,6 @@
+<input type="text" name="" id="" #child1Input class="form-control mb-2" />
+<button type="button" class="btn btn-primary mb-3" (click)="sendToParent()">
+  Send to Parent
+</button>
+<p>Value received from Parent on Keyup Event</p>
+<h5>{{ fromParent ? fromParent : "No value so far" }}</h5>

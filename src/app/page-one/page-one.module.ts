@@ -9,6 +9,11 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { ServicesComponent } from './services/services.component';
 import { FormsModule } from '@angular/forms';
+import { Child1Component } from './basics/child1/child1.component';
+import { AccountComponent } from './data-binding/account/account.component';
+import { NewAccountComponent } from './data-binding/new-account/new-account.component';
+import { AccountsService } from './data-binding/accounts.service';
+import { LoggingService } from './data-binding/logging.service';
 
 
 @NgModule({
@@ -18,12 +23,16 @@ import { FormsModule } from '@angular/forms';
     DataBindingComponent,
     EventBindingComponent,
     DirectivesComponent,
-    ServicesComponent
+    ServicesComponent,
+    Child1Component,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     CommonModule,
     PageOneRoutingModule,
     FormsModule
-  ]
+  ],
+  providers:[AccountsService, LoggingService]
 })
 export class PageOneModule { }
