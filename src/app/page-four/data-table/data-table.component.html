@@ -1,0 +1,34 @@
+<a routerLink="create" class="btn btn-primary mb-2">Add new task</a>
+<table class="table align-middle">
+  <thead>
+    <tr>
+      <th scope="col">Sr No.</th>
+      <th scope="col">Task Name</th>
+      <th scope="col">Details</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of records; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ record.name }}</td>
+      <td>{{ record.details }}</td>
+      <td>
+        <button
+          [routerLink]="['edit', record.id]"
+          type="button"
+          class="btn btn-primary btn-sm px-3 mx-3"
+        >
+          <i class="fas fa-edit"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-sm px-3 mx-3"
+          (click)="onDelete(record.id)"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

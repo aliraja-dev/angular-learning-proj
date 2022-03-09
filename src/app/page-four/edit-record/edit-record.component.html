@@ -1,0 +1,52 @@
+<!-- <button class="btn btn-secondary" routerLink="../">Back</button> -->
+
+<h6 class="text-center text-uppercase fs-6 fw-bold">Edit task</h6>
+
+<div class="container">
+  <form (ngSubmit)="onUpdate()" #f="ngForm">
+    <div class="form-group" *ngIf="task">
+      <label for="">Task</label>
+      <input
+        type="text"
+        class="form-control mb-2"
+        [(ngModel)]="task.name"
+        name="taskName"
+      />
+      <label for="">Detail</label>
+      <input
+        type="text"
+        class="form-control mb-2"
+        [value]="task.details"
+        name="taskDetails"
+        [(ngModel)]="task.details"
+      />
+      <div class="row gap-3 mt-4">
+        <button class="col btn btn-secondary" type="button" routerLink="../../">
+          Cancel
+        </button>
+        <button class="col btn btn-primary" type="button" type="submit">
+          Update
+        </button>
+      </div>
+    </div>
+  </form>
+  <h6 *ngIf="!task">No component to edit</h6>
+</div>
+<hr />
+<h3>Edit Task component</h3>
+<p>
+  WE will have input fields that will show the task details form and there we
+  will on save, use the firebase service to add the task, on success, show a
+  message to the user, and give him option to return to data table or add more
+  tasks
+</p>
+<p>
+  Form Input fields that bring data from the click to this component and then
+  lets the user edit it and update and return to the data table
+</p>
+<p>
+  As we are using router outlet to move btw the components inside the login
+  firebase comp, we need to pass the params using the router. to identify which
+  task to edit. We will read the params using Activated Route and then use the
+  firebase service to update the relevant task.
+</p>

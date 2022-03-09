@@ -1,0 +1,27 @@
+<button class="btn btn-secondary" routerLink="../">Back</button>
+<p>
+  WE will have input fields that will show the task details form and there we
+  will on save, use the firebase service to add the task, on success, show a
+  message to the user, and give him option to return to data table or add more
+  tasks
+</p>
+<h6 class="text-center text-uppercase fs-6 fw-bold">Add task</h6>
+
+<div class="container">
+  <form (ngSubmit)="onAddTask(f.value)" #f="ngForm">
+    <div class="form-group">
+      <label for="">Task</label>
+      <input type="text" class="form-control mb-2" ngModel name="name" />
+      <label for="">Detail</label>
+      <input type="text" class="form-control mb-2" name="details" ngModel />
+      <div class="row gap-3 mt-4">
+        <button class="col btn btn-secondary" type="button" routerLink="../../">
+          Cancel
+        </button>
+        <button class="col btn btn-primary" type="button" type="submit">
+          Update
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
