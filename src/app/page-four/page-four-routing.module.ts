@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IntroRoutingComponent } from './intro-routing/intro-routing.component';
-import { PageFourComponent } from './page-four/page-four.component';
-import { RouteAuthComponent } from './route-auth/route-auth.component';
+import { CrudFirebaseComponent } from './crud-firebase/crud-firebase.component';
+import { CrudMongodbComponent } from './crud-mongodb/crud-mongodb.component';
+import { LoginFirebaseComponent } from './login-firebase/login-firebase.component';
+import { LoginMongodbComponent } from './login-mongodb/login-mongodb.component';
+import { PageFourMainComponent } from './page-four-main/page-four-main.component';
+
 
 const routes: Routes = [
 {
   path:'',
-  component:PageFourComponent,
+  component:PageFourMainComponent,
   children: [
-    {path:'', component: IntroRoutingComponent},
-    {path:'route-auth', component: RouteAuthComponent}
+    {path:'', component: CrudFirebaseComponent},
+    {path:'login-firebase', component: LoginFirebaseComponent},
+    {path:'login-mongodb', component: LoginMongodbComponent},
+    {path:'crud-mongodb', component: CrudMongodbComponent},
+
   ]
 }
 
