@@ -25,11 +25,15 @@ const routes: Routes = [
 
     {path:'login-firebase', component: LoginFirebaseComponent},
     {path:'login-mongodb', component: LoginMongodbComponent},
-    {path:'crud-mongodb', component: CrudMongodbComponent},
-
+    {path:'crud-mongodb', component: CrudMongodbComponent,
+    children:[
+      {path:'', component: DataTableComponent}, // default path
+      {path:'edit/:id', component:EditRecordComponent},
+      {path:'create', component:CreateRecordComponent}
+    ]
+  }
   ]
 }
-
 ];
 
 @NgModule({

@@ -57,4 +57,13 @@ getTask(id:string){
   return task;
 }
 
+
+// MONGO DB & EXPRESS SERVER FUNCTIONS
+getDataFromMongoDb(){
+  return this.http.get<Task>('http://localhost:5000/record');
+}
+
+addTaskToMongoDb(task:Task){
+  return this.http.post('http://localhost:5000/record/add', task);
+}
 }

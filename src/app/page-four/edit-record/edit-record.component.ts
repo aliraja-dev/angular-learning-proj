@@ -22,8 +22,6 @@ export class EditRecordComponent implements OnInit {
       this.task =this.firebaseSvc.getTask(res['id']);
       console.log(this.task);
     });
-
-
   }
 
   onUpdate(){
