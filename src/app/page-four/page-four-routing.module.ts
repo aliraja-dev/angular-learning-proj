@@ -5,8 +5,7 @@ import { CrudFirebaseComponent } from './crud-firebase/crud-firebase.component';
 import { CrudMongodbComponent } from './crud-mongodb/crud-mongodb.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { EditRecordComponent } from './edit-record/edit-record.component';
-import { LoginFirebaseComponent } from './login-firebase/login-firebase.component';
-import { LoginMongodbComponent } from './login-mongodb/login-mongodb.component';
+
 import { PageFourMainComponent } from './page-four-main/page-four-main.component';
 
 
@@ -22,9 +21,6 @@ const routes: Routes = [
       {path:'create', component:CreateRecordComponent}
     ]
   },
-
-    {path:'login-firebase', component: LoginFirebaseComponent},
-    {path:'login-mongodb', component: LoginMongodbComponent},
     {path:'crud-mongodb', component: CrudMongodbComponent,
     children:[
       {path:'', component: DataTableComponent}, // default path

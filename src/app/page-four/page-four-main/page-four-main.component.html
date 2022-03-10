@@ -19,7 +19,7 @@
             <a
               routerLink="/page4"
               routerLinkActive="active"
-              routerLinkActiveOptions="{exact:true}"
+              [routerLinkActiveOptions]="{ exact: true }"
               data-binding
               class="nav-link"
               aria-current="page"
@@ -32,39 +32,9 @@
           </li>
           <li class="nav-item">
             <a
-              routerLink="login-firebase"
-              routerLinkActive="active"
-              routerLinkActiveOptions="{exact:true}"
-              data-binding
-              class="nav-link"
-              aria-current="page"
-            >
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#home" />
-              </svg>
-              Login with Firebase
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              routerLink="login-mongodb"
-              routerLinkActive="active"
-              routerLinkActiveOptions="{exact:true}"
-              data-binding
-              class="nav-link"
-              aria-current="page"
-            >
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#home" />
-              </svg>
-              Login with MongoDB
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
               routerLink="crud-mongodb"
               routerLinkActive="active"
-              routerLinkActiveOptions="{exact:true}"
+              [routerLinkActiveOptions]="{ exact: true }"
               data-binding
               class="nav-link"
               aria-current="page"

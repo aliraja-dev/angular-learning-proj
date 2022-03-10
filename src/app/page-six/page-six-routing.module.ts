@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MiscComponent } from './misc/misc.component';
-import { PageSixComponent } from './page-six/page-six.component';
+import { LoginFirebaseComponent } from './login-firebase/login-firebase.component';
+
+import { PageSixMainComponent } from './page-six-main/page-six-main.component';
+import { RegisterFirebaseComponent } from './register-firebase/register-firebase.component';
+
 
 
 const routes: Routes = [
   {
     path: '',
-    component: PageSixComponent,
+    component: PageSixMainComponent,
     // canActivate: [AuthGuard],
     children: [
-      { path: '', component:  MiscComponent},
+      { path: '', component:  LoginFirebaseComponent},
+      { path: 'register', component:  RegisterFirebaseComponent},
 
 
     ]

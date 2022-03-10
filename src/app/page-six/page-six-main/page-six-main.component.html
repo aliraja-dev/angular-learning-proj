@@ -27,12 +27,12 @@
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#home" />
               </svg>
-              Basics
+              User with firebase
             </a>
           </li>
         </ul>
         <hr />
-        <div class="dropdown">
+        <div class="dropdown" *ngIf="isAuthenticated">
           <a
             href="#"
             class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
@@ -47,22 +47,51 @@
               height="32"
               class="rounded-circle me-2"
             />
-            <strong>mdo</strong>
+            <strong> {{ email }}</strong>
           </a>
           <ul
             class="dropdown-menu text-small shadow"
             aria-labelledby="dropdownUser2"
           >
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item">Profile</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" (click)="onLogout()">Sign out</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col-9" *ngIf="!isAuthenticated">
+      <!-- Pills navs -->
+      <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="tab-login"
+            data-mdb-toggle="pill"
+            routerLink="/page6"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            role="tab"
+            aria-controls="pills-login"
+            aria-selected="true"
+            >Sign in</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="tab-register"
+            data-mdb-toggle="pill"
+            routerLink="register"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            role="tab"
+            aria-controls="pills-register"
+            aria-selected="false"
+            >Sign up</a
+          >
+        </li>
+      </ul>
       <router-outlet></router-outlet>
     </div>
   </div>

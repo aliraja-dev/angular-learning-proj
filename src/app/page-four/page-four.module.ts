@@ -5,8 +5,7 @@ import { PageFourRoutingModule } from './page-four-routing.module';
 
 import { PageFourMainComponent } from './page-four-main/page-four-main.component';
 import { CrudFirebaseComponent } from './crud-firebase/crud-firebase.component';
-import { LoginFirebaseComponent } from './login-firebase/login-firebase.component';
-import { LoginMongodbComponent } from './login-mongodb/login-mongodb.component';
+
 import { CrudMongodbComponent } from './crud-mongodb/crud-mongodb.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { EditRecordComponent } from './edit-record/edit-record.component';
@@ -18,8 +17,7 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     PageFourMainComponent,
     CrudFirebaseComponent,
-    LoginFirebaseComponent,
-    LoginMongodbComponent,
+
     CrudMongodbComponent,
     DataTableComponent,
     EditRecordComponent,
