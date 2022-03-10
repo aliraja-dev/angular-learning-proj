@@ -25,8 +25,15 @@ export class EditRecordComponent implements OnInit {
   }
 
   onUpdate(){
-
-    console.log("update clicked");
+    if(this.router.url ===`/page4/crud-mongodb/edit/${this.task.id}`){
+      console.log("update request will go to mongodb server");
+      this.firebaseSvc.editTaskOnMongoDb(this.task.id, {name: this.form.value.taskName, details: this.form.value.taskDetails}).subscribe(res=>
+        {console.log(res)
+      this.router.navigate(['page4', 'crud-mongodb'])
+      });
+      return;
+    }
+    console.log("update clicked for firebase");
     this.firebaseSvc.editTask(this.task.id,{name: this.form.value.taskName, details: this.form.value.taskDetails} ).subscribe(res=>
       {console.log(res)
     this.router.navigate(['page4'])

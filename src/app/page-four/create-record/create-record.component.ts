@@ -16,22 +16,20 @@ export class CreateRecordComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.route);
-
   }
 
   onAddTask(value:any){
     if(this.router.url ==='/page4/crud-mongodb/create'){
       console.log('this request will go to Mongo thru Express server');
       this.firebaseSvc.addTaskToMongoDb({name:value.name, details: value.details}).subscribe( (res)=>{console.log(res)
-        this.router.navigate(['/page4']);})
-
+        this.router.navigate(['/page4', 'crud-mongodb']);})
+        return;
     }
-    console.log(this.route);
-    console.log(window.location.href);
-    console.log(value);
-    console.log('add task clicked')
+    // console.log(this.route);
+    // console.log(window.location.href);
+    // console.log(value);
+    // console.log('add task clicked')
   this.firebaseSvc.postData({name: value.name, details: value.details }).subscribe(
-
     (res)=>{console.log(res)
     this.router.navigate(['/page4']);
     });

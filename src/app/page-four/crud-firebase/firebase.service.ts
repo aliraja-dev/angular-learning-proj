@@ -60,10 +60,34 @@ getTask(id:string){
 
 // MONGO DB & EXPRESS SERVER FUNCTIONS
 getDataFromMongoDb(){
-  return this.http.get<Task>('http://localhost:5000/record');
+  return this.http.get<Task[]>('http://localhost:5000/record').pipe(
+    map(responseData => {
+      const tasksArray: Task[] = [];
+      for (let task of responseData){
+       tasksArray.push({...task, id:task["_id"]!})
+      }
+      this.tasks=tasksArray;
+      this.tasksSubject.next(tasksArray);
+
+      return tasksArray;
+    }),
+    catchError(errorRes => {
+      // Send to analytics server
+      return throwError(errorRes);
+    })
+  );
+
 }
 
 addTaskToMongoDb(task:Task){
   return this.http.post('http://localhost:5000/record/add', task);
 }
+
+deleteTaskfromMongoDb(id:string){
+  return this.http.delete('http://localhost:5000/' + id);
+}
+editTaskOnMongoDb(id:string, data:Task){
+return this.http.post('http://localhost:5000/update/'+id, data);
+}
+
 }
