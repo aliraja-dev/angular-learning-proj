@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 
+import {environment} from '../../environments/environment';
+
 import { User } from './user.model';
 
 export interface AuthResponseData {
@@ -18,7 +20,7 @@ export interface AuthResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  WEB_API_KEY: string = 'AIzaSyBU1wTxwQWnGatLEaKTFokvH_MIrD6SEGY';
+  WEB_API_KEY: string = environment.FIREBASE_API_KEY;
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
